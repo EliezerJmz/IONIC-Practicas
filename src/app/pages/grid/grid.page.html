@@ -1,0 +1,70 @@
+<!--Utilizando el componente header le enviamos titulo-->
+<app-header titulo="Ion Grid"></app-header>
+
+
+<ion-content>
+ <ion-text color="primary" style="margin: auto; text-align: center;">
+   <p>Por cada Row, fila tenemos un eapacio total de 12</p>
+ </ion-text> 
+
+ <!--fixed = false adapta todo el contenido a la pantalla, si o ponesmos en true trabaja sobre un ancho fijo poniend pading a las lados-->
+<ion-grid fixed="false">
+
+  <ion-row>
+    <ion-col size="6" style="background-color: tomato;">Columna 1 tamaño de 6</ion-col>
+    <ion-col size="6" style="background-color: mistyrose;">Columna 2 tamaño de 6</ion-col>
+  </ion-row>
+
+  <ion-row>
+      <ion-col size="4">
+        <ion-card>
+          <ion-img src="/assets/img3.jpg"></ion-img>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card>
+          <ion-img src="/assets/img3.jpg"></ion-img>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card>
+          <ion-img src="/assets/img3.jpg"></ion-img>
+        </ion-card>
+      </ion-col>
+  </ion-row>
+
+
+  <ion-row>
+    <!--tamaño pequeño 12/12=1 imagen por pantalla, lg=12/3 = 4 imagenes por pantalla, md=12/4 = 3 imagnes por pantalla, sm=12/6 = 2 imagenes por pantalla-->
+    <ion-col size="12" size-lg="3" size-md="4" size-sm="6" *ngFor="let item of tarjeta; let i = index">
+      <ion-card>
+        <ion-img src="/assets/img6.jpg"></ion-img>
+      </ion-card>
+
+      <ion-card-header>
+        <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+        <ion-card-title>Awesome Title {{i+1}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+         hic excepturi voluptate inventore vero quo, eligendi.
+      </ion-card-content>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <div style="margin: auto; text-align: center;">
+        <a href="https://www.udemy.com/course/ionic-ios-android-pwa-appstore-playstore-push/learn/lecture/13298746#content">Video 54</a>
+      </div>
+    </ion-col>
+  </ion-row>
+
+
+
+</ion-grid>
+
+</ion-content>
+
+
+<app-footer titulo="Footer Ion Grid"></app-footer>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>checkbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- Checkbox -->
+<ion-list>
+  <ion-item>
+    <ion-checkbox slot="end"></ion-checkbox>
+    <ion-label>Checkbox Simple</ion-label>
+  </ion-item>
+</ion-list>
+
+
+
+<div style="margin: auto; text-align: center; padding-top: 15px;">
+<h3>Checkboxes en una lista</h3>
+</div>
+
+<!-- Checkboxes in a List -->
+<ion-list>
+  <!--con el click estamos enviado los valores acutales que tenemos en el item-->
+  <ion-item *ngFor="let item of data"  (click)="valoresActuales(item)"> 
+    <ion-label>{{item.name}}</ion-label>
+    <!--con ngModel[(ngModel)] indicamos los valores de la variable selected de la lista-->
+    <ion-checkbox slot="end" [color]="item.name"  [(ngModel)]="item.selected"></ion-checkbox>
+  </ion-item>
+</ion-list>
+
+<!--Ver los datos de los checkbox ver el etado de todos los select-->
+<!--usaamos una funcion verData()-->
+<ion-button (click)="verData()" expand="block">
+  Ver estados de los select de los Chec Box
+</ion-button>
+
+
+
+
+<div style="margin: auto; text-align: center; padding-top: 15px;">
+  <a href="https://www.udemy.com/course/ionic-ios-android-pwa-appstore-playstore-push/learn/lecture/13272598#overview">Video 48</a>  
+</div>
+
+</ion-content>

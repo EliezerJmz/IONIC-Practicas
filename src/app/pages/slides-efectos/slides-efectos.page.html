@@ -1,0 +1,33 @@
+<app-header titulo="Slides Efectos"></app-header>
+
+<ion-content>
+
+<!-- em [options]="efectos" efectos= "slideCoverflow", "slideCubo", "slideFade" "slideFlip" -->
+  <ion-slides pager="ios" class="slide-full" [options]="slideCubo">
+    <ion-slide *ngFor="let slide of slides">
+      <ion-card mode="ios">
+        <img [src]="slide.img" class="slide-image /">
+        <ion-card-header>
+          <ion-card-subtitle>{{slide.titulo}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{slide.desc}}
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <!--slide para retornar al menu usando navController-->
+    <ion-slide>
+      <ion-card>
+        <ion-button (click)="regresarMenu()" expand="block">
+          Regresar a menu
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+
+    
+  </ion-slides>
+
+
+
+</ion-content>

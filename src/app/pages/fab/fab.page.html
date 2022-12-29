@@ -1,0 +1,60 @@
+
+<!--Utilizando el componente header le enviamos titulo-->
+<app-header titulo="Head Ion Fab"></app-header>
+
+<ion-content>
+
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="top" horizontal="end" slot="fixed"> <!--fixed deja fijo el boton-->
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+
+      <ion-fab-button>
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-list side="top">
+          <!--usando color personalizado que creamos en variables css para ionic angular y youtube-->
+        <ion-fab-button color="ionic"><ion-icon name="logo-ionic"></ion-icon></ion-fab-button>
+        <ion-fab-button color="angular"><ion-icon name="logo-angular"></ion-icon></ion-fab-button>
+        <ion-fab-button color="youtube"><ion-icon name="logo-youtube"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+
+      <ion-fab-list side="start">
+        <ion-fab-button color="facebook"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+        <ion-fab-button color="twitter"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+        <ion-fab-button color="google"><ion-icon name="logo-google"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+
+    </ion-fab>
+
+
+
+  <ion-list>
+    <ion-item *ngFor="let item of data; let i = index">
+      <ion-label>Item: {{ i+1 }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div style="margin: auto; text-align: center;">
+    <div>
+      <a href="https://gist.github.com/Klerith/a7de186839be33d0a5debcfa6eba5332">variables css</a>
+    </div>
+    <div>
+      <a href="https://www.udemy.com/course/ionic-ios-android-pwa-appstore-playstore-push/learn/lecture/13293092#overview">video variables css</a>
+    </div> 
+  </div>
+
+</ion-content>
+
+<ion-footer>
+     <!--youtube es un color personalizado que creamos en variables css-->
+  <ion-toolbar color="youtube">
+    <ion-title>Footer ion Fab</ion-title>
+  </ion-toolbar>
+</ion-footer>

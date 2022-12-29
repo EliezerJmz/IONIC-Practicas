@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>list-reorder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-reorder-group (ionItemReorder)="doReorder($event)" [disabled]="false">
+        <ion-item *ngFor="let personaje of personajes">
+          <ion-label>{{ personaje }}</ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+
+  <!--Mostrar como se va modificando el orden de la lista-->
+  <ion-button (click)="onClick()" expand="full">
+    Ver orden de lista
+  </ion-button>
+
+  <div style="margin: auto; text-align: center; padding-top: 20px;">
+    <a href="https://www.youtube.com/watch?v=Hv70s3HpM9g&ab_channel=FernandoHerrera">Ver Video</a>
+  </div>
+
+
+</ion-content>

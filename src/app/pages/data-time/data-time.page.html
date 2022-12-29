@@ -1,0 +1,62 @@
+
+<!--Utilizando el componente header le enviamos titulo-->
+<app-header titulo="Data Time"></app-header>
+
+<ion-content>
+
+  <ion-list>
+    
+    <ion-list-header>
+      <ion-label>Datos de Nacimiento</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
+      <!--con el (ionChange) obtenemos los cambios en este caso el de la fecha y lo enviamos al ts por medio del $event-->
+      <ion-datetime [value]="fechaNacimiento.toISOString()" display-format="YYYY MMMM DD" (ionChange)="cambioFecha($event)"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <div>
+        <label>Recuperar fecha al seleccionarla</label>
+      </div>
+     <div>
+      <ion-label>{{recuperaFecha}}</ion-label>
+     </div>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-label>Limitar las fehcas</ion-label>
+      <ion-datetime display-format="DD.MM.YYYY HH:mm" min="2015-01-01" max="2025-12-31"></ion-datetime>
+    </ion-item>
+
+        
+    <ion-item>
+      <ion-label>Limitar las Años</ion-label>
+      <ion-datetime display-format="YYYY" min="2010-01-01" max="2030"></ion-datetime>
+    </ion-item>
+    
+    <!--fechas personalizadas no funcionan en ionic 6-->
+    <ion-item>
+      <ion-label>Custom Options</ion-label>
+      <!--"customPickerOptions" es una propiedad de nuestra clase -->
+      <ion-datetime [pickerOptions]="customPickerOptions"></ion-datetime>
+    </ion-item>
+
+  </ion-list>
+
+
+
+
+
+
+
+
+
+  <div style="margin: auto; text-align: center; padding-top: 15px;"> 
+    <a href="https://www.udemy.com/course/ionic-ios-android-pwa-appstore-playstore-push/learn/lecture/13285322#overview">Ver Video 49</a><br>
+    <a href="https://www.udemy.com/course/ionic-ios-android-pwa-appstore-playstore-push/learn/lecture/13285806#overview">Video 50</a>
+  </div>
+
+</ion-content>

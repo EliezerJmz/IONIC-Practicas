@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pagina de Inicio Uso de list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item  *ngFor="let comp of componentes" [routerLink]="comp.redirectTo" detail> 
+      <ion-icon slot="start" [name]="comp.icon"></ion-icon>
+      <ion-label>{{comp.name}}</ion-label>
+    </ion-item>
+
+
+  </ion-list>
+
+  <div style="margin: auto; text-align: center; padding-top: 20px;">
+    <a href="https://www.youtube.com/watch?v=skrvo9EuziE&list=PLgy437oMcfuNDBUX22y2o4pPrdHzfteU_&index=6">Ver Video</a>
+  </div>
+
+</ion-content>
+
+<app-footer titulo="Titulo del Footer"></app-footer>
